@@ -6,7 +6,8 @@ Version:	1.2
 Release:	0.1
 License:	GPL
 Group:		Multimedia
-Source0:	http://peterhost.dl.sourceforge.net/sourceforge/kmusicmanager/kmusicmanager-1.2.tar.gz
+######		Unknown group!
+Source0:	http://dl.sourceforge.net/kmusicmanager/%{name}-%{version}.tar.gz
 #Source1:	%{name}.desktop
 # Source0-md5:	738f882b952b7cf6318a6295f2f00e2d
 URL:		http://kmusicmanager.sourceforge.net/index.html
@@ -20,7 +21,8 @@ KMusicManager's main features are :
 - Monitors directories for new songs.
 - You can edit the tags of your songs.
 - Create playlists, using drag and drop.
-- You can choose what KMusicManager plays next by dragging and dropping songs into the play queue.
+- You can choose what KMusicManager plays next by dragging and
+  dropping songs into the play queue.
 
 %description -l pl
 G³ównymi mo¿liwo¶ciami programu KMusicPlayer s±:
@@ -31,15 +33,16 @@ G³ównymi mo¿liwo¶ciami programu KMusicPlayer s±:
 
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %configure
 
 %build
-make
+%{__make}
 
 %install
-make install
+rm -rf $RPM_BUILD_ROOT
+%{__make} install
 
 #install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 

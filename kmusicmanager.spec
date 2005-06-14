@@ -1,15 +1,15 @@
+# TODO: desktop file
 Summary:	KMusicManager manages your entire music collection.
 Summary(pl):	KMusicManager pomaga w zarz±dzaniu zasobami muzycznymi
 Name:		kmusicmanager
 Version:	1.2
-#%define	bver	pre2
 Release:	0.1
 License:	GPL
 Group:		Multimedia
 ######		Unknown group!
 Source0:	http://dl.sourceforge.net/kmusicmanager/%{name}-%{version}.tar.gz
-#Source1:	%{name}.desktop
 # Source0-md5:	738f882b952b7cf6318a6295f2f00e2d
+#Source1:	%{name}.desktop
 URL:		http://kmusicmanager.sourceforge.net/index.html
 BuildRequires:	taglib-devel >= 1.3
 BuildRequires:	kdebase-devel >= 3
@@ -25,33 +25,41 @@ KMusicManager's main features are :
   dropping songs into the play queue.
 
 %description -l pl
-G³ównymi mo¿liwo¶ciami programu KMusicPlayer s±:
+G³ównymi mo¿liwo¶ciami programu KMusicManager s±:
 - zarz±dzanie kolekcjami muzycznimi w formacie mp3, ogg-vorbis, flac
 - obserwacja katalogów w poszukiwaniu nowym piosenek
 - edycja opisów piosenek
 - tworzenie playlist metod± przeci±gania myszk±
 
-
 %prep
 %setup -q
 
-%configure
-
 %build
+cp -f /usr/share/automake/config.sub admin
+%configure \
+	--with-qt-libraries=%{_libdir}
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install
+install -d $RPM_BUILD_ROOT%{_pixmapsdir}
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 #install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 install src/hi32-app-kmusicmanager.png $RPM_BUILD_ROOT%{_pixmapsdir}/kmusicmanager.png
 
+%find_lang %{name} --with-kde
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc README LICENSE AUTHORS COPYING
+%doc README
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%{_pixmapsdir}/*.png
+%{_iconsdir}/*/*/*/*.png
+%{_datadir}/apps/%{name}

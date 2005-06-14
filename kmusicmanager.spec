@@ -25,7 +25,7 @@ KMusicManager's main features are :
 
 %description -l pl
 G³ównymi mo¿liwo¶ciami programu KMusicManager s±:
-- zarz±dzanie kolekcjami muzycznimi w formacie mp3, ogg-vorbis, flac
+- zarz±dzanie kolekcjami muzycznymi w formacie MP3, Ogg-Vorbis, FLAC
 - obserwacja katalogów w poszukiwaniu nowym piosenek
 - edycja opisów piosenek
 - tworzenie playlist metod± przeci±gania myszk±

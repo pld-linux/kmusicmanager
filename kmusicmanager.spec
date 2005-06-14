@@ -9,8 +9,9 @@ Group:		X11/Applications/Sound
 Source0:	http://dl.sourceforge.net/kmusicmanager/%{name}-%{version}.tar.gz
 # Source0-md5:	738f882b952b7cf6318a6295f2f00e2d
 URL:		http://kmusicmanager.sourceforge.net/index.html
-BuildRequires:	taglib-devel >= 1.3
+BuildRequires:	automake
 BuildRequires:	kdebase-devel >= 3
+BuildRequires:	taglib-devel >= 1.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,6 +42,7 @@ cp -f /usr/share/automake/config.sub admin
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_pixmapsdir}
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
@@ -52,6 +54,9 @@ install src/hi32-app-kmusicmanager.png $RPM_BUILD_ROOT%{_pixmapsdir}/kmusicmanag
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=kmusicmanager
+Comment=KMusicManager manages your entire music collection.
+Comment[pl]=KMusicManager pomaga w zarządzaniu zasobami muzycznymi
+Exec=kmusicmanager
+Icon=kmusicmanager.png
+Terminal=false
+Type=Application
+MapNotify=false
+Categories=Qt;KDE;Audio;
+# vi: encoding=utf-8

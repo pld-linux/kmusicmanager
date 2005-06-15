@@ -1,13 +1,13 @@
-# TODO: desktop file
 Summary:	KMusicManager manages your entire music collection.
 Summary(pl):	KMusicManager pomaga w zarz±dzaniu zasobami muzycznymi
 Name:		kmusicmanager
 Version:	1.2
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		X11/Applications/Sound
 Source0:	http://dl.sourceforge.net/kmusicmanager/%{name}-%{version}.tar.gz
 # Source0-md5:	738f882b952b7cf6318a6295f2f00e2d
+Source1:	%{name}.desktop
 URL:		http://kmusicmanager.sourceforge.net/index.html
 BuildRequires:	automake
 BuildRequires:	kdebase-devel >= 3
@@ -46,7 +46,7 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-#install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 install src/hi32-app-kmusicmanager.png $RPM_BUILD_ROOT%{_pixmapsdir}/kmusicmanager.png
 

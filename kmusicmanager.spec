@@ -1,5 +1,5 @@
 Summary:	KMusicManager manages your entire music collection.
-Summary(pl):	KMusicManager pomaga w zarz±dzaniu zasobami muzycznymi
+Summary(pl.UTF-8):   KMusicManager pomaga w zarzÄ…dzaniu zasobami muzycznymi
 Name:		kmusicmanager
 Version:	1.2
 Release:	1
@@ -23,12 +23,12 @@ KMusicManager's main features are :
 - You can choose what KMusicManager plays next by dragging and
   dropping songs into the play queue.
 
-%description -l pl
-G³ównymi mo¿liwo¶ciami programu KMusicManager s±:
-- zarz±dzanie kolekcjami muzycznymi w formacie MP3, Ogg-Vorbis, FLAC
-- obserwacja katalogów w poszukiwaniu nowym piosenek
-- edycja opisów piosenek
-- tworzenie playlist metod± przeci±gania myszk±
+%description -l pl.UTF-8
+GÅ‚Ã³wnymi moÅ¼liwoÅ›ciami programu KMusicManager sÄ…:
+- zarzÄ…dzanie kolekcjami muzycznymi w formacie MP3, Ogg-Vorbis, FLAC
+- obserwacja katalogÃ³w w poszukiwaniu nowym piosenek
+- edycja opisÃ³w piosenek
+- tworzenie playlist metodÄ… przeciÄ…gania myszkÄ…
 
 %prep
 %setup -q

@@ -1,5 +1,5 @@
 Summary:	KMusicManager manages your entire music collection.
-Summary(pl.UTF-8):   KMusicManager pomaga w zarządzaniu zasobami muzycznymi
+Summary(pl.UTF-8):	KMusicManager pomaga w zarządzaniu zasobami muzycznymi
 Name:		kmusicmanager
 Version:	1.2
 Release:	1

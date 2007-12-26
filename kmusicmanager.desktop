@@ -1,8 +1,7 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=KMusicManager
 Exec=kmusicmanager
-Icon=kmusicmanager.png
+Icon=kmusicmanager
 Type=Application
 Terminal=false
 Categories=Qt;KDE;Audio;
